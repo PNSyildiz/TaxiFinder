@@ -107,6 +107,8 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 9,
         borderColor: 'grey',
+        // secureTextEntry: 'true',
+
     },
     InputBox: {
         margin: 10,

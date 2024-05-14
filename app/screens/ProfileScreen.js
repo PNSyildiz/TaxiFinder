@@ -12,8 +12,8 @@ function ProfileScreen() {
             <Text style={styles.circleInitials}>KK</Text>
             <Text style={styles.name}>Kabelo Kgoadi</Text>
 
-            <TouchableOpacity style={{marginTop: 40, marginLeft:'auto'}}>
-                <Icon name='pencil' size={30} color={"#FFFFFF"} />
+            <TouchableOpacity style={{marginTop: 30, marginLeft: 30}}>
+                <Icon name='pencil' size={23} color={"#FFFFFF"} />
             </TouchableOpacity>
         </View>
             
@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
         height: 300,
     },
     wrapper: {
+        marginTop: 10,
         margin: 20,
         backgroundColor: "#FFFFFF",
         borderRadius: 9,
@@ -78,16 +79,16 @@ const styles = StyleSheet.create({
      },
     circleInitials: {
         borderRadius: 100,
-        width: 90,
-        padding: 30,
+        width: 70,
+        padding: 20,
         margin: 10,
         backgroundColor: "#FFFFFF",
         fontSize: 20,
         fontWeight: '700',
     },
     name: {
-        marginTop: 40,
-        fontSize: 20,
+        marginTop: 30,
+        fontSize: 15,
         color: "#FFFFFF",
         marginLeft: 15,
     },

@@ -6,6 +6,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AppButton from './AppButton';
+import { Link, router } from 'expo-router';
 
 function EditScreen() {
     const [selectedValue, setSelectedValue] = useState(null);
@@ -20,7 +21,7 @@ function EditScreen() {
     <View style={styles.container}>
         <View style={styles.header}>
             <TouchableOpacity>
-              <Icon name='arrow-left' size={25}/>
+              <Icon name='arrow-left' size={25}><Link href={"/HomeScreen"}/></Icon> 
             </TouchableOpacity>
             
             <Text style={{fontSize: 20, fontWeight: '700', marginLeft: 110}}>Edit Profile</Text>
@@ -35,7 +36,7 @@ function EditScreen() {
             <Text style={{marginTop: 10, marginRight: 190}}>Town/Township/City</Text>
                   <TextInput 
                         style={styles.InputBox}
-                        placeholder="e.g Soweto / Katlehong / Johannesburg"
+                        placeholder="e.g Soweto / Katlehong / Johannesburg" 
                   />
             <Text style={{marginRight: 290}}>Area</Text>
                   <TextInput 

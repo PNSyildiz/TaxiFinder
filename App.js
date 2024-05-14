@@ -21,9 +21,9 @@ export default function App() {
         {/* <Responses /> */}
         {/* <Question /> */}
         {/* <LoginScreen /> */}
-        {/* <SignUpScreen /> */}
+        <SignUpScreen />
         {/* <ProfileScreen /> */}
-        <EditScreen />
+        {/* <EditScreen /> */}
         {/* <AppButton /> */}
     </View>
   )

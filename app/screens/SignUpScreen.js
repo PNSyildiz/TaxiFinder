@@ -1,13 +1,55 @@
 import React from 'react'
-import { View, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
+import {ScrollView, View, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import DropDownPicker from 'react-native-dropdown-picker';
+import axios from 'axios';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AppButton from './AppButton';
 
 function SignUpScreen() {
     const [selectedValue, setSelectedValue] = useState(null);
+    const [users, setUsers] = useState([]);
+    const [name, setName] =useState('');
+    const [email, setEmail] = useState('');
+    const [ password , setPawword] = useState(''); 
+
+    const addUser = async(user)=>{
+        const res = await fetch('http://localhost:8080/sign-up/add/user', {
+            method: 'POST',
+            headers:{
+            'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        const data = await res.json()
+        setUsers([...users, data])  
+    };
+
+    const onSubmit = (e) =>{
+        e.preventDefault();
+
+        if(!Text) {
+            alert('please fill in all fields');
+            return;
+        }
+
+        onAdd({name: Text, email: Text, password:  Text})
+        setName('');
+        setEmail('');
+        setPawword('');
+
+      
+    }
+   
+    // axios.post('http/localhost:8080/sign-up/add/user', postData)
+    // .then(response =>{
+    //     console.log('Response:', response.data);
+    // })   
+    // .catch(error =>{
+    //     console.error('Error:', error.response.data);
+    // });
+    
     const items = [
         { label: 'extension', value: '1'},
         { label: 'phase', value: '2'},
@@ -16,7 +58,8 @@ function SignUpScreen() {
     ];
 
   return (
-   <View style={styles.container}>
+
+    <ScrollView style={styles.container}>
         <View style={styles.wrapper}>
             <Text style={{fontSize: 20, fontWeight: '700'}}>Sign Up</Text>
             <Text style={{fontSize: 12, fontWeight: '400', marginTop: 10}}>Register with</Text>
@@ -65,7 +108,7 @@ function SignUpScreen() {
             <AppButton title= "Submit" />
 
         </View>
-   </View>
+        </ScrollView>
   )
 }
 
@@ -91,6 +134,8 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 9,
         borderColor: 'grey',
+        type: 'text',
+        value: {Text},
     },
     emailInput: {
         margin: 10,
@@ -99,6 +144,8 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 9,
         borderColor: 'grey',
+        type: 'text',
+        value: {Text},
     },
     PassInput: {
         margin: 10,
@@ -107,6 +154,8 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 9,
         borderColor: 'grey',
+        type: 'text',
+        value: {Text},
         // secureTextEntry: 'true',
 
     },

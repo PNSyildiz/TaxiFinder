@@ -1,12 +1,12 @@
 import React from 'react'
-import { StyleSheet, View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
+import {ScrollView, StyleSheet, View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AppButton from './AppButton';
 
 function LoginScreen() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
         <View style={styles.wrap}>
             <Image style={styles.image} source={require("../assets/logo (1).png")} />
             <Text style={{fontSize: 20, fontWeight: '700'}}>Login</Text>
@@ -29,7 +29,7 @@ function LoginScreen() {
             </View>
             <Text style={{fontWeight: '300', fontSize: 12}}>Need an account? <TouchableOpacity><Text style={{fontWeight: '400', fontSize: 12, textDecorationLine: 'underline'}}>Sign Up</Text></TouchableOpacity></Text>
         </View>
-    </View>
+    </ScrollView>
   )
 }
 
